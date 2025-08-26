@@ -421,16 +421,28 @@ export interface ApiAsianTourAsianTour extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    availableSeats: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    daysdescription: Schema.Attribute.Text;
+    description: Schema.Attribute.Blocks;
+    endDate: Schema.Attribute.Date;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::asian-tour.asian-tour'
     > &
       Schema.Attribute.Private;
+    location: Schema.Attribute.Text;
+    price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
+    startDate: Schema.Attribute.Date;
+    status1: Schema.Attribute.Boolean;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
