@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "asian_tours",
+  "info": {
+    "singularName": "asian-tour",
+    "pluralName": "asian-tours",
+    "displayName": "Asian-Tour"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
