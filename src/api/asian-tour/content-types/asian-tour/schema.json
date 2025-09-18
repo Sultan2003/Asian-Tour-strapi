@@ -47,6 +47,9 @@
     },
     "status1": {
       "type": "boolean"
+    },
+    "tour_type": {
+      "type": "string"
     }
   }
 }

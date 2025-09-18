@@ -444,6 +444,7 @@ export interface ApiAsianTourAsianTour extends Struct.CollectionTypeSchema {
     startDate: Schema.Attribute.Date;
     status1: Schema.Attribute.Boolean;
     title: Schema.Attribute.String;
+    tour_type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
