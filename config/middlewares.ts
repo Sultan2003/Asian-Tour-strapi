@@ -8,12 +8,5 @@ export default [
   "strapi::body",
   "strapi::session",
   "strapi::favicon",
-
-  {
-    name: "strapi::public",
-    config: {
-      maxAge: 31536000,
-      immutable: true,
-    },
-  },
+  "strapi::public",
 ];
