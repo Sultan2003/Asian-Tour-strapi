@@ -510,6 +510,46 @@ export interface ApiAsianTourAsianTour extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHotelsHotels extends Struct.CollectionTypeSchema {
+  collectionName: 'hotelss';
+  info: {
+    displayName: 'Hotels';
+    pluralName: 'hotelss';
+    singularName: 'hotels';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    city: Schema.Attribute.String;
+    contacts: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    gallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hotels.hotels'
+    > &
+      Schema.Attribute.Private;
+    mainImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    priceFrom: Schema.Attribute.Decimal;
+    publishedAt: Schema.Attribute.DateTime;
+    rooms: Schema.Attribute.Blocks;
+    slug: Schema.Attribute.String;
+    termsOfStay: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiReviewsReviews extends Struct.CollectionTypeSchema {
   collectionName: 'reviews_plural';
   info: {
@@ -1091,6 +1131,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::asian-tour.asian-tour': ApiAsianTourAsianTour;
+      'api::hotels.hotels': ApiHotelsHotels;
       'api::reviews.reviews': ApiReviewsReviews;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
