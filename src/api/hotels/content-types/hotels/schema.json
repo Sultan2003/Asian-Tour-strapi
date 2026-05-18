@@ -54,6 +54,9 @@
     },
     "priceFrom": {
       "type": "decimal"
+    },
+    "hotel_type": {
+      "type": "string"
     }
   }
 }
