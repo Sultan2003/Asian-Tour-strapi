@@ -1,0 +1,100 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attractions",
+  "info": {
+    "singularName": "attraction",
+    "pluralName": "attractions",
+    "displayName": "Attraction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categories": {
+      "type": "json"
+    },
+    "bestTime": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "entranceFee": {
+      "type": "string"
+    },
+    "openingHours": {
+      "type": "string"
+    },
+    "coordinates": {
+      "type": "component",
+      "repeatable": false,
+      "component": "geo.coordinates"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq-item"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.stat-item"
+    },
+    "nearbyAttractions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::attraction.attraction"
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "ctaTitle": {
+      "type": "string"
+    },
+    "ctaSubtitle": {
+      "type": "text"
+    }
+  }
+}
