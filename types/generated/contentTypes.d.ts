@@ -410,6 +410,53 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+
+export interface ApiAttractionAttraction extends Struct.CollectionTypeSchema {
+  collectionName: 'attractions';
+  info: {
+    displayName: 'Attraction';
+    pluralName: 'attractions';
+    singularName: 'attraction';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bestTime: Schema.Attribute.String;
+    categories: Schema.Attribute.JSON;
+    city: Schema.Attribute.String;
+    coordinates: Schema.Attribute.Component<'geo.coordinates', false>;
+    country: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaSubtitle: Schema.Attribute.Text;
+    ctaTitle: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    duration: Schema.Attribute.String;
+    entranceFee: Schema.Attribute.String;
+    faq: Schema.Attribute.Component<'shared.faq-item', true>;
+    gallery: Schema.Attribute.Media<'images', true>;
+    heroImage: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::attraction.attraction'> &
+      Schema.Attribute.Private;
+    metaDescription: Schema.Attribute.Text;
+    metaTitle: Schema.Attribute.String;
+    nearbyAttractions: Schema.Attribute.Relation<'manyToMany', 'api::attraction.attraction'>;
+    openingHours: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.Text;
+    slug: Schema.Attribute.UID<'title'>;
+    stats: Schema.Attribute.Component<'shared.stat-item', true>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAsianTourAsianTour extends Struct.CollectionTypeSchema {
   collectionName: 'asian_tours';
   info: {
@@ -1132,6 +1179,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::asian-tour.asian-tour': ApiAsianTourAsianTour;
+      'api::attraction.attraction': ApiAttractionAttraction;
       'api::hotels.hotels': ApiHotelsHotels;
       'api::reviews.reviews': ApiReviewsReviews;
       'plugin::content-releases.release': PluginContentReleasesRelease;
