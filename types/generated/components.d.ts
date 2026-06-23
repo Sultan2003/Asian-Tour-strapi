@@ -14,7 +14,7 @@ export interface SharedContentBlocks extends Struct.ComponentSchema {
     displayName: 'contentBlocks';
   };
   attributes: {
-    content: Schema.Attribute.Text;
+    content: Schema.Attribute.Blocks;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
