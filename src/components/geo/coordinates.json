@@ -4,12 +4,5 @@
     "displayName": "coordinates"
   },
   "options": {},
-  "attributes": {
-    "lat": {
-      "type": "decimal"
-    },
-    "lng": {
-      "type": "decimal"
-    }
-  }
+  "attributes": {}
 }

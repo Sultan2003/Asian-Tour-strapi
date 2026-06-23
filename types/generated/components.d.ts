@@ -5,9 +5,18 @@ export interface GeoCoordinates extends Struct.ComponentSchema {
   info: {
     displayName: 'coordinates';
   };
+  attributes: {};
+}
+
+export interface SharedContentBlocks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_content_blocks';
+  info: {
+    displayName: 'contentBlocks';
+  };
   attributes: {
-    lat: Schema.Attribute.Decimal;
-    lng: Schema.Attribute.Decimal;
+    content: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -16,10 +25,7 @@ export interface SharedFaqItem extends Struct.ComponentSchema {
   info: {
     displayName: 'faq-item';
   };
-  attributes: {
-    answer: Schema.Attribute.Text;
-    question: Schema.Attribute.String;
-  };
+  attributes: {};
 }
 
 export interface SharedStatItem extends Struct.ComponentSchema {
@@ -27,16 +33,14 @@ export interface SharedStatItem extends Struct.ComponentSchema {
   info: {
     displayName: 'stat-item';
   };
-  attributes: {
-    label: Schema.Attribute.String;
-    value: Schema.Attribute.String;
-  };
+  attributes: {};
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'geo.coordinates': GeoCoordinates;
+      'shared.content-blocks': SharedContentBlocks;
       'shared.faq-item': SharedFaqItem;
       'shared.stat-item': SharedStatItem;
     }

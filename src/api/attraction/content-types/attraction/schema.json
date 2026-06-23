@@ -12,88 +12,37 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "slug": {
       "type": "uid",
       "targetField": "title"
     },
     "country": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "city": {
       "type": "string"
-    },
-    "subtitle": {
-      "type": "string"
-    },
-    "shortDescription": {
-      "type": "text"
-    },
-    "description": {
-      "type": "richtext"
     },
     "heroImage": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos",
+        "audios"
       ]
     },
-    "gallery": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "categories": {
-      "type": "json"
-    },
-    "bestTime": {
-      "type": "string"
-    },
-    "duration": {
-      "type": "string"
-    },
-    "entranceFee": {
-      "type": "string"
-    },
-    "openingHours": {
-      "type": "string"
-    },
-    "coordinates": {
+    "contentBlocks": {
       "type": "component",
-      "repeatable": false,
-      "component": "geo.coordinates"
+      "component": "shared.content-blocks",
+      "repeatable": true
     },
-    "faq": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.faq-item"
-    },
-    "stats": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.stat-item"
-    },
-    "nearbyAttractions": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::attraction.attraction"
-    },
-    "metaTitle": {
-      "type": "string"
-    },
-    "metaDescription": {
+    "seoTitle": {
       "type": "text"
     },
-    "ctaTitle": {
-      "type": "string"
-    },
-    "ctaSubtitle": {
+    "seoDescription": {
       "type": "text"
     }
   }

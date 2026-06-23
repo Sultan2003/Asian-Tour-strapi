@@ -4,12 +4,5 @@
     "displayName": "faq-item"
   },
   "options": {},
-  "attributes": {
-    "question": {
-      "type": "string"
-    },
-    "answer": {
-      "type": "text"
-    }
-  }
+  "attributes": {}
 }

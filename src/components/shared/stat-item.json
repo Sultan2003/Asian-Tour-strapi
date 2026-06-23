@@ -4,12 +4,5 @@
     "displayName": "stat-item"
   },
   "options": {},
-  "attributes": {
-    "value": {
-      "type": "string"
-    },
-    "label": {
-      "type": "string"
-    }
-  }
+  "attributes": {}
 }
